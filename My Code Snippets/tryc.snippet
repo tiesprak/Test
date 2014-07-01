@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Try Catch with Error message thrown in new exception</Title>
+      <Author>Ties Prak</Author>
+      <Description />
+      <HelpUrl />
+      <SnippetTypes />
+      <Keywords />
+      <Shortcut>tryc</Shortcut>
+    </Header>
+    <Snippet>
+      <References />
+      <Imports>
+        <Import>
+          <Namespace>System.Reflection</Namespace>
+        </Import>
+      </Imports>
+      <Declarations />
+      <Code Language="csharp" Kind="method body" Delimiter="$"><![CDATA[try
+            {
+                
+            }
+            catch (Exception ex)
+            {
+                string msg = "Error in " + MethodBase.GetCurrentMethod().Name + " with message:\n" + ex.Message;
+				throw new Exception(msg);
+            }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
